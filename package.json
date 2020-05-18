@@ -1,0 +1,9 @@
+{
+  "name": "graphql-react-app",
+  "version": "1.0.0",
+  "description": "GraphQL | React application.",
+  "main": "index.js",
+  "repository": "git@github.com:alxdelgado/graphql-react-app.git",
+  "author": "Alex Delgado <delgadoalex@icloud.com>",
+  "license": "MIT"
+}
