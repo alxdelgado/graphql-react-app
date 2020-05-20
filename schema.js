@@ -32,6 +32,7 @@ const LaunchType = new GraphQLObjectType({
 
 // Payload Types 
 const PayloadType = new GraphQLObjectType({
+    name: 'Payload',
     fields: () => ({
         nationality: { type: GraphQLString },
         payload_type: { type: GraphQLString },
@@ -105,7 +106,7 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
-// export our graphql schema
+// export our graphql schema;
 module.exports = new GraphQLSchema({
     query: RootQuery
 });
