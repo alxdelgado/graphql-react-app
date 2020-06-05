@@ -1,4 +1,4 @@
-// import dependencies; 
+// import modules
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
@@ -7,34 +7,36 @@ import { Query } from 'react-apollo';
 
 // import assets; 
 
-const MISSIONS_QUERY = gql`
-    query MissionsQuery {
-        missions {
-            mission_id, 
-            mission_name
+// Launch Query; 
+const LAUNCH_QUERY = gql`
+    query LaunchesQuery {
+        launches {
+            flight_number, 
+            launch_year, 
+            launch_success
         }
     }
 `;
 
-
-class Missions extends React.Component {
+class Launches extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className='display-4 my-3'>Launches</h1>
-                <Query query={MISSIONS_QUERY}>
+                <h1 className="display-4 my-3">Launches</h1>
+                <Query query={LAUNCHES_QUERY}>
                     {({ loading, error, data }) => {
                         if (loading) {
-                            return <img className='mission-loader' src={Loader} alt='Loader' />
+                            return <img className="launch-loader" src={Loader} alt="Loader" />
                         }
                         if (error) {
                             console.log(error);
                         }
-                        console.log(data);
-                        return <LaunchItem data={data} />
+                        console.log(data)
+
                     }}
                 </Query>
             </React.Fragment>
         )
     }
 }
+
