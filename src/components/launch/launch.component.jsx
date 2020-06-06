@@ -54,6 +54,34 @@ class Launch extends React.Component {
                                     </h1>
 
                                     {/* Launch Details */}
+                                    <h4 className="mb-4">Launch Details: </h4>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">Flight Number: {flight_number}</li>
+                                        <li className="list-group-item">Launch Year: {launch_year}</li>
+                                        <li className="list-group-item">
+                                            Launch Successful:
+                                            {
+                                                launch_success
+                                                    ? <span className="text-sucess">Yes</span>
+                                                    : <span className="text-danger">No</span>
+                                            }
+                                        </li>
+                                        <li className="list-group-item">Flight Number: {flight_number}</li>
+                                    </ul>
+
+                                    {/* Payload Details */}
+                                    <h4 className="mt-4 mb-4">Rocket Details: </h4>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">Nationality: {payload.nationality}</li>
+                                        <li className="list-group-item">Payload Type: {payload.payload_type}</li>
+                                        <li className="list-group-item">Payload Weight: {payload.payload_mass_kg}</li>
+                                        <li className="list-group-item">Orbit: {payload.orbit}</li>
+                                    </ul>
+
+                                    <hr />
+
+                                    {/* Back to Home Button */}
+                                    <Link to='/' className="btn btn-secondary mb-5">Back</Link>
                                 </div>
                             )
                         }
