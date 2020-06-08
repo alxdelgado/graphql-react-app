@@ -5,7 +5,7 @@ import { ApolloProvider } from 'react-apollo';
 import { Router } from '@reach/router';
 
 // import components; 
-
+import Missions from './components/missons/missions.component';
 
 // import styles; 
 
