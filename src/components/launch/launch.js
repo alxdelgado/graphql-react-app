@@ -3,6 +3,9 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { Link } from '@reach/router';
 
+// import styles;
+import styles from './launch.styles.css';
+
 // import assets; 
 import Loading from '../../../assets/loader.gif';
 
@@ -24,7 +27,7 @@ const LAUNCH_QUERY = gql`
     }
 `;
 
-class Launch extends React.Component {
+export default class Launch extends React.Component {
     render() {
         const flight_number = parseInt(this.props.id)
 
@@ -47,7 +50,7 @@ class Launch extends React.Component {
 
                             // Display Data; 
                             return (
-                                <div>
+                                <div className="launch-component-container">
                                     {/* Mission Name */}
                                     <h1 className="text-dark">
                                         <span className="text-dark">Mission: {mission_name}</span>

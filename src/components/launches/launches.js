@@ -3,15 +3,18 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-// import components; 
+// import components;
+import LaunchItem from '../../components/launch-item/launch-item.js' 
 
 // import assets; 
+import Loading from '../../../assets/loader.gif';
 
 // Launch Query; 
-const LAUNCH_QUERY = gql`
+const LAUNCHES_QUERY = gql`
     query LaunchesQuery {
         launches {
-            flight_number, 
+            flight_number,
+            mission_name, 
             launch_year, 
             launch_success
         }
@@ -26,17 +29,20 @@ class Launches extends React.Component {
                 <Query query={LAUNCHES_QUERY}>
                     {({ loading, error, data }) => {
                         if (loading) {
-                            return <img className="launch-loader" src={Loader} alt="Loader" />
+                            return <img className="launch-loader" src={Loading} alt="Loader" />
                         }
                         if (error) {
                             console.log(error);
                         }
                         console.log(data)
+                        return <LaunchItem data={data} />
 
                     }}
                 </Query>
             </React.Fragment>
         )
     }
-}
+}; 
+
+export default Launches;
 

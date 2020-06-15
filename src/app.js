@@ -4,10 +4,11 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { Router } from '@reach/router';
 
-// import components; 
-import Missions from './components/missons/missions.component';
 
-// import styles; 
+// import components; 
+import Launches from '../src/components/launches/launches.js';
+import Launch from '../src/components/launch/launch.js';
+
 
 // import assets; 
 import Logo from '../assets/logo.png';
@@ -25,8 +26,8 @@ export default function App() {
                     <img src={Logo} alt='Logo' className='logo' />
                 </div>
                 <Router>
-                    <Missions path='/' />
-                    <Mission path='/mission/:id' />
+                    <Launches path='/' />
+                    <Launch path='/launch/:id' />
                 </Router>
             </div>
         </ApolloProvider>
