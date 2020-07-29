@@ -25,20 +25,22 @@ class Launches extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className="display-4 my-3">Launches</h1>
-                <Query query={LAUNCHES_QUERY}>
-                    {({ loading, error, data }) => {
-                        if (loading) {
-                            return <img className="launch-loader" src={Loading} alt="Loader" />
-                        }
-                        if (error) {
-                            console.log(error);
-                        }
-                        console.log(data)
-                        return <LaunchItem data={data} />
+                <div className="launches__section">
+                    <h1 className="launches__title">Launches</h1>
+                    <Query query={LAUNCHES_QUERY}>
+                        {({ loading, error, data }) => {
+                            if (loading) {
+                                return <img className="launch__loader" src={Loading} alt="Loader" />
+                            }
+                            if (error) {
+                                console.log(error);
+                            }
+                            console.log(data)
+                            return <LaunchItem data={data} />
 
-                    }}
-                </Query>
+                        }}
+                    </Query>
+                </div>
             </React.Fragment>
         )
     }

@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+}
+
+/* Loading Spinner */
+.launch__loader {
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0;
+    margin: auto;
+}
+
+.launch__section {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(1, 1fr);
+}
+
+.launches__title {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-evenly;
+}
