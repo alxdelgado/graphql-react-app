@@ -13,12 +13,18 @@
 }
 
 .launch__section {
-    display: grid;
-    grid-template: repeat(4, 1fr) / repeat(1, 1fr);
+    display: flex;
 }
 
 .launches__title {
-    grid-column: 1 / -1;
     display: flex;
-    justify-content: space-evenly;
 }
+
+
+/* Media Queries */ 
+@media all and (min-width: 425px) {
+    .launch__title {
+        font-size: 10px;
+    }
+}
+

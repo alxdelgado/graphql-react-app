@@ -15,8 +15,8 @@ export default (props) => {
                     <div className="launchItem__section">
                         <div key={item.flight_number} className="launchItem__container">
                             <div className="launchItem__title">
-                                <h4>{item.flight_number}. Mission:</h4>
-                                <span className={item.launch_success ? 'text-success' : 'text-danger'}> {item.mission_name}</span>
+                                <h4>{item.flight_number}. Mission: </h4>
+                                <span className={item.launch_success ? 'text-success' : 'text-danger'}>{item.mission_name}</span>
                                 <p className="text-muted">Date: {item.launch_year}</p>
                             </div>
                             <div className="launchItem__details">

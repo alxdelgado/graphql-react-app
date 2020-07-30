@@ -50,3 +50,37 @@
 }
 
 
+/* Media Queries */ 
+@media all and (max-width: 425px) {
+    .launchItem__section {
+        display: flex;
+        width: 50vw;
+        height: 20vh;
+    }
+
+    .launchItem__container {
+        display: flex; 
+        width: 50em; 
+    }
+
+    .launchItem_title {
+        display: flex-start;
+    }
+
+    .launchItem__title > h4 {
+        font-size: 15px; 
+    }
+
+    .launchItem__title > span {
+        font-size: 10px;
+    }
+
+    .launchItem_title > p {
+        display: flex-start; 
+        font-size: 5px;
+    }
+
+    .launchItem_details {
+        font-size: 10px;
+    }
+}
