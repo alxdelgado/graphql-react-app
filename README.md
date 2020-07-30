@@ -31,7 +31,7 @@ Dedicated to learning new technologies. This has been one on my list to explore.
 
 11. :arrow_right: We have displayed all the data received as response of the query on home page( `Launches.js` ).
 
-12. arrow_right: When user request for a particular launch item, we query that item by its id and display it on an individual page `Launch.js` ( e.g. We redirect the user on url `http://localhost:8080/launch/1`, when the request for the launch item with id=1 )
+12. :arrow_right: When user request for a particular launch item, we query that item by its id and display it on an individual page `Launch.js` ( e.g. We redirect the user on url `http://localhost:8080/launch/1`, when the request for the launch item with id=1 )
 
 ## Installation :wrench: 
 1. Clone this repo by running `git clone https://github.com/alxdelgado/graphql-react-app.git`
