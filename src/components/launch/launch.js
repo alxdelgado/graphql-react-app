@@ -17,6 +17,7 @@ const LAUNCH_QUERY = gql`
             launch_year
             launch_success
             payload {
+                payload_id
                 nationality
                 payload_type
                 payload_mass_kg
@@ -52,7 +53,7 @@ export default class Launch extends React.Component {
                             return (
                                 <div className="launch-component-container">
                                     {/* Mission Name */}
-                                    <h1 className="text-dark">
+                                    <h1 className="display-4 my-3">
                                         <span className="text-dark">Mission: {mission_name}</span>
                                     </h1>
 
@@ -73,8 +74,9 @@ export default class Launch extends React.Component {
                                     </ul>
 
                                     {/* Payload Details */}
-                                    <h4 className="mt-4 mb-4">Rocket Details: </h4>
+                                    <h4 className="mt-4 mb-4" >Payload Details: </h4>
                                     <ul className="list-group">
+                                        <li className="list-group-item">Payload ID: {payload.payload_id}</li>
                                         <li className="list-group-item">Nationality: {payload.nationality}</li>
                                         <li className="list-group-item">Payload Type: {payload.payload_type}</li>
                                         <li className="list-group-item">Payload Weight: {payload.payload_mass_kg}</li>

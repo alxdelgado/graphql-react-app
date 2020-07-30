@@ -6,7 +6,7 @@ import './launch-item.css';
 
 export default (props) => {
     const { data } = props;
-
+    
     return (
         <React.Fragment>
             {data.launches.map(item => {

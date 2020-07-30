@@ -12,8 +12,6 @@ import Launch from '../components/launch/launch.js';
 // import custom styles
 import './App.css';
 
-
-
 // import assets; 
 import Logo from '../../assets/logo.png';
 
@@ -22,19 +20,20 @@ const client = new ApolloClient({
     uri: 'http://localhost:5000/graphql'
 });
 
-// see if you can change the Launches component to Missions component;
-export default function App() {
-    return (
-        <ApolloProvider client={client}>
-            <div className='app__section'>
-                <div className='app__container'>
-                    <img src={Logo} alt='Logo' className='app__logo' />
-                    <Router>
-                        <Launches path='/' /> 
-                        <Launch path='/launch/:id' />
-                    </Router>
+export default class App extends React.Component {
+    render() {
+        return (
+            <ApolloProvider client={client}>
+                <div className='app__section'>
+                    <div className='app__container'>
+                        <img src={Logo} alt='Logo' className='app__logo' />
+                        <Router>
+                            <Launch path='/launch/:id' />
+                            <Launches path='/' />
+                        </Router>
+                    </div>
                 </div>
-            </div>
-        </ApolloProvider>
-    )
+            </ApolloProvider>
+        )
+    }
 }; 

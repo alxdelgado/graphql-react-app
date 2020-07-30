@@ -4,7 +4,8 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
 // import components;
-import LaunchItem from '../../components/launch-item/launch-item.js' 
+import LaunchItem from '../launch-item/launch-item.js'; 
+import StatusIndicator from '../status-indicator/status-indicator.js';
 
 // import assets; 
 import Loading from '../../../assets/loader.gif';
@@ -27,6 +28,7 @@ class Launches extends React.Component {
             <React.Fragment>
                 <div className="launches__section">
                     <h1 className="launches__title">Launches</h1>
+                    <StatusIndicator />
                     <Query query={LAUNCHES_QUERY}>
                         {({ loading, error, data }) => {
                             if (loading) {

@@ -10,15 +10,6 @@ const {
     GraphQLSchema
 } = require('graphql');
 
-// Missons 
-const MissionType = new GraphQLObjectType({
-    name: 'Mission',
-    fields: () => ({
-        mission_id: { type: GraphQLString },
-        mission_name: { type: GraphQLString },
-    })
-});
-
 // Launch Types
 const LaunchType = new GraphQLObjectType({
     name: 'Launch',
@@ -27,6 +18,7 @@ const LaunchType = new GraphQLObjectType({
         mission_name: { type: GraphQLString },
         launch_year: { type: GraphQLString },
         launch_success: { type: GraphQLString },
+        payload: { type: PayloadType }
     })
 });
 
@@ -34,6 +26,7 @@ const LaunchType = new GraphQLObjectType({
 const PayloadType = new GraphQLObjectType({
     name: 'Payload',
     fields: () => ({
+        payload_id: { type: GraphQLString },
         nationality: { type: GraphQLString },
         payload_type: { type: GraphQLString },
         payload_mass_kg: { type: GraphQLInt },
@@ -46,26 +39,7 @@ const PayloadType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        // All Mission Data; 
-        missions: {
-            type: new GraphQLList(MissionType),
-            resolve(parent, args) {
-                return axios.get('https://api.spacexdata.com/v3/missions')
-                    .then(res => res.data);
-            }
-        },
-        // Single Mission data with ID; 
-        mission: {
-            type: MissionType,
-            args: {
-                mission_id: { type: GraphQLString }
-            },
-            resolve(parent, args) {
-                return axios.get(`https://api.spacexdata.com/v3/missions/${args.mission_id}`)
-                    .then(res => res.data);
-            }
-        },
-        // All Launch Data; 
+        // All Launches Data;
         launches: {
             type: new GraphQLList(LaunchType),
             resolve(parent, args) {
@@ -73,7 +47,7 @@ const RootQuery = new GraphQLObjectType({
                     .then(res => res.data);
             }
         },
-        // Single launch with ID; 
+        // Single Launch data with ID; 
         launch: {
             type: LaunchType,
             args: {

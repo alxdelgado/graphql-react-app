@@ -25,7 +25,7 @@ Dedicated to learning new technologies. This has been one on my list to explore.
 
 8. :arrow_right: Reach router is used to create routes for home and individual pages.
 
-9. :arrow_right: The `graphql-tag` ( graphQl query parsing utility ) is installed and `gpl` is imported from it. The `gpl` parses GraphQL query strings into the standard GraphQL AST.
+9. :arrow_right: The `graphql-tag` ( graphQl query parsing utility ) is installed and `gql` is imported from it. The `gql` parses GraphQL query strings into the standard GraphQL AST.
 
 10. :arrow_right: Use `gpl` to query the data in front react app, from the schema we have create in our node application in backend.
 
