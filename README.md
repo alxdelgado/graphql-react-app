@@ -1,5 +1,5 @@
 ## Project Title
-This project demonstrates the use of GraphQL, Apollo Client with React and the Spacex API. 
+This project demonstrates the use of GraphQL, Apollo Client with React and the SpaceX API. 
 
 ## Motivation
 Dedicated to learning new technologies. This has been one on my list to explore. 
