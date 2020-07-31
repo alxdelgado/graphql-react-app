@@ -14,6 +14,7 @@ const LAUNCH_QUERY = gql`
 		launch( flight_number: $flight_number ) {
 			flight_number
 			mission_name
+            details
 			launch_year
 			launch_success
 			launch_date_local,
@@ -45,7 +46,7 @@ export default class Launch extends React.Component {
                             }
                             console.log(data)
 
-                            const { mission_name, flight_number, launch_date_local, launch_success, rocket } = data.launch;
+                            const { mission_name, flight_number, launch_date_local, launch_success, details, rocket } = data.launch;
                             
                             // Display Data; 
                             return (
@@ -64,17 +65,17 @@ export default class Launch extends React.Component {
                                             Launch Successful:
                                             {
                                                 launch_success
-                                                    ? <span className="text-success">Yes</span>
-                                                    : <span className="text-danger">No</span>
+                                                    ? <span className="text-success"> Yes </span>
+                                                    : <span className="text-danger"> No </span>
                                             }
                                         </li>
                                         <li className="list-group-item">Flight Number: {flight_number}</li>
+                                        <li className="list-group-item">Details: {details}</li>
                                     </ul>
 
                                     {/* Rocket Details */}
-									<h4 className="mt-4 mb-4">Rocket Details: </h4>
+									<h4 key={rocket.rocket_id} className="mt-4 mb-4">Rocket Details: </h4>
 									<ul className="list-group">
-										<li className="list-group-item">Rocket ID: { rocket.rocket_id }</li>
 										<li className="list-group-item">Rocket Name: { rocket.rocket_name }</li>
 										<li className="list-group-item">Rocket Type: { rocket.rocket_type }</li>
 									</ul>
