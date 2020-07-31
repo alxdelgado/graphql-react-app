@@ -28,8 +28,8 @@ export default class App extends React.Component {
                     <div className='app__container'>
                         <img src={Logo} alt='Logo' className='app__logo' />
                         <Router>
-                            <Launch path='/launch/:id' />
                             <Launches path='/' />
+                            <Launch path='/launch/:id' />
                         </Router>
                     </div>
                 </div>

@@ -1,22 +1,18 @@
-// require dependencies 
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-const cors = require('cors');
-const MyGraphQLSchema = require('./schema');
+const cors = require( 'cors' );
+const MyGraphQLSchema = require( './schema.js' );
 
-// initalize express
 const app = express();
 
-// Allow cross origin request
-app.use(cors());
+// Allow Cross origin
+app.use( cors() );
 
-// use graphql schema
 app.use('/graphql', graphqlHTTP({
-    schema: MyGraphQLSchema,
-    graphiql: true
+	schema: MyGraphQLSchema,
+	graphiql: true
 }));
 
-// Port Access
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on Port ${PORT}`)); 
+app.listen(PORT, () => console.log( `Server started on Port ${PORT}` ));
